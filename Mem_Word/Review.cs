@@ -41,22 +41,30 @@ namespace Mem_Word
             SQLiteCommandBuilder thisbuilder = new SQLiteCommandBuilder(da);
             //for (int i = 0; i < dt.Rows.Count; i++)//所有该复习的Time加1
             //{
-                //voice = dt.Rows[i]["Voice"].ToString();
-                //Word.Text = dt.Rows[i]["Word"].ToString();
-                //Prct.Text = dt.Rows[i]["Prct"].ToString();
-                //Meaning.Text = dt.Rows[i]["Meaning"].ToString();
-                //Example.Text = dt.Rows[i]["Example"].ToString();
+            //voice = dt.Rows[i]["Voice"].ToString();
+            //Word.Text = dt.Rows[i]["Word"].ToString();
+            //Prct.Text = dt.Rows[i]["Prct"].ToString();
+            //Meaning.Text = dt.Rows[i]["Meaning"].ToString();
+            //Example.Text = dt.Rows[i]["Example"].ToString();
             //    Time = int.Parse(dt.Rows[i]["Time"].ToString());
             //    Time++;
             //    dt.Rows[i]["Time"] = Time;
             //}
-            Word.Text = dt.Rows[count]["Word"].ToString();
-            Time = int.Parse(dt.Rows[count]["Time"].ToString());
-            Time++;
-            dt.Rows[count]["Time"] = Time;
-            da.Update(dt);//将表中的数据更新  
-            label6.Text = dt.Rows.Count.ToString();
-            remaining = dt.Rows.Count;
+            if (dt.Rows.Count != 0)
+            {
+                Word.Text = dt.Rows[count]["Word"].ToString();
+                Time = int.Parse(dt.Rows[count]["Time"].ToString());
+                Time++;
+                dt.Rows[count]["Time"] = Time;
+                da.Update(dt);//将表中的数据更新  
+                label6.Text = dt.Rows.Count.ToString();
+                remaining = dt.Rows.Count;
+            }
+            else
+            {
+                MessageBox.Show("今天没有要复习的单词");
+                this.Close();
+            }
 
         }
 
@@ -75,6 +83,10 @@ namespace Mem_Word
 
         private void Next_Click(object sender, EventArgs e)//复习下一个单词
         {
+            Prct.Text = "";
+            Meaning.Text = "";
+            Example.Text = "";
+
             if (count < dt.Rows.Count-1)
             {
                 count++;

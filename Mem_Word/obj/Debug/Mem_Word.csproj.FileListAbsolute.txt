@@ -17,3 +17,5 @@ C:\Users\付景昌\Desktop\Mem_Word\Mem_Word\obj\Debug\Interop.WMPLib.dll
 C:\Users\付景昌\Desktop\Mem_Word\Mem_Word\obj\Debug\Mem_Word.csproj.ResolveComReference.cache
 C:\Users\付景昌\Desktop\Mem_Word\Mem_Word\bin\Debug\Microsoft.DirectX.AudioVideoPlayback.xml
 C:\Users\付景昌\Desktop\Mem_Word\Mem_Word\bin\Debug\Microsoft.DirectX.DirectSound.xml
+C:\Users\付景昌\Desktop\Mem_Word\Mem_Word\bin\Debug\Microsoft.DirectX.AudioVideoPlayback.dll
+C:\Users\付景昌\Desktop\Mem_Word\Mem_Word\bin\Debug\Microsoft.DirectX.DirectSound.dll
